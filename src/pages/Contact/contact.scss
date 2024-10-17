@@ -1,0 +1,13 @@
+.contact__page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    span{
+        font-size: 25px;
+        width: clamp(200px, 70vw, 1500px);
+        text-align: center;
+        margin: 15px;
+    }
+}

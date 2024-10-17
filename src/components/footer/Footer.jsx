@@ -9,19 +9,16 @@ function Footer() {
       <div className="footer-content">
         <p>© 2024 Lisko.ovh</p>
         <div className="social-icons">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/LisPOLSKA" target="_blank" rel="noopener noreferrer" aria-label="link to my github">
             <FontAwesomeIcon icon={faGithub} className="icon" />
           </a>
-          <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://discord.gg/Gd8qBEuVbP" target="_blank" rel="noopener noreferrer" aria-label="link to my discord">
             <FontAwesomeIcon icon={faDiscord} className="icon" />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@LiskoDevPL" target="_blank" rel="noopener noreferrer" aria-label="link to my youtube">
             <FontAwesomeIcon icon={faYoutube} className="icon" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faTwitter} className="icon" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/liskodev/" target="_blank" rel="noopener noreferrer" aria-label="link to my instagram">
             <FontAwesomeIcon icon={faInstagram} className="icon" />
           </a>
         </div>
