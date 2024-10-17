@@ -1,0 +1,85 @@
+@import "../../style.scss";
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 50px;
+  border-bottom: 1px solid #444; /* Kolor border */
+  position: sticky;
+  top: 0;
+  background-color: #222; /* Kolor tła */
+  color: whitesmoke; /* Kolor tekstu */
+  z-index: 999;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    span {
+      font-weight: bold;
+      font-size: 1.7rem;
+      color: white; /* Kolor logo */
+    }
+  }
+
+  .menu-icon {
+    display: none; /* Ukryj domyślnie */
+    cursor: pointer;
+
+    @include mobile {
+      display: block; /* Pokaż tylko na małych ekranach */
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    a {
+      color: whitesmoke; /* Kolor tekstu linków */
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      text-decoration: none;
+
+      &.active {
+        font-weight: bold; /* styl aktywnego linku */
+      }
+    }
+
+    &.open {
+      display: flex; /* Wyświetl menu, gdy otwarte */
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #222; /* Kolor tła menu */
+      width: 100%;
+      text-align: center;
+      z-index: 1000;
+      padding: 10px 0;
+
+      a {
+        padding: 10px 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @include mobile {
+    nav {
+      display: none; /* Domyślnie ukryj menu na małych ekranach */
+
+      &.open {
+        display: flex; /* Pokaż menu, gdy jest otwarte */
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+// Definicja kolorów
+$themes: (
+  dark: (
+    textColor: whitesmoke,
+    bg: #222,
+    logo: white,
+    bgSoft: #333,
+    textColorSoft: lightgray,
+    border: #444,
+  ),
+);
+
+// Mixin do ustawiania motywu
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global; // Inicjalizuj zmienną globalną
+      @each $key, $value in $map { // Poprawiono: $submap na $value
+        $theme-map: map-merge(
+          $theme-map,
+          ($key: $value)
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global; // Zresetuj po użyciu
+    }
+  }
+}
+
+// Funkcja pobierająca wartość z mapy motywów
+@function themed($key) {
+  @if $theme-map != null {
+    @return map-get($theme-map, $key);
+  } @else {
+    @warn "Warning: theme-map is not set!";
+    @return null;
+  }
+}
+
+// Mixin na małe ekrany
+@mixin mobile {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+// Mixin na ekrany tabletów
+@mixin tablet {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+// Stylowanie ciała dokumentu
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(144deg, rgba(2,0,36,1) 0%, rgba(27,8,77,1) 82%);
+}

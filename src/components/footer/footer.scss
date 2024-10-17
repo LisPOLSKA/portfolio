@@ -1,0 +1,52 @@
+@import "../../style.scss";
+
+.footer {
+    background-color: #222; // Tło stopki
+    color: #fff;            // Kolor tekstu
+    padding: 20px 0;        // Wewnętrzne marginesy góra-dół
+    text-align: center;     // Wyśrodkowanie tekstu
+    position: sticky;
+    bottom: 0;
+    transform: translateY(1px);
+  
+    .footer-content {
+      display: flex;
+      justify-content: space-between; // Rozdzielenie elementów na boki
+      align-items: center;
+      max-width: 1200px;   // Maksymalna szerokość kontenera
+      margin: 0 auto;      // Wyśrodkowanie kontenera
+      padding: 0 20px;     // Margines wewnętrzny dla szerokich ekranów
+  
+      p {
+        font-size: 1rem;   // Rozmiar tekstu
+        margin: 0;         // Usunięcie domyślnego marginesu
+      }
+  
+      .social-icons {
+        display: flex;         // Ustawienie ikonek w jednym wierszu
+        gap: 20px;             // Odstęp pomiędzy ikonkami
+        
+        a {
+          color: #fff;         // Kolor ikonek
+          transition: color 0.3s ease;  // Efekt płynnej zmiany koloru
+  
+          &:hover {
+            color: #1da1f2;    // Kolor zmiany przy najechaniu, np. niebieski
+          }
+        }
+  
+        .icon {
+          font-size: 1.5rem;   // Rozmiar ikonek
+        }
+      }
+    }
+  }
+  
+  // Stylizacja dla mniejszych ekranów
+  @include mobile {
+    .footer-content {
+      flex-direction: column;     // Ułożenie elementów w kolumnie na małych ekranach
+      gap: 10px;                  // Zwiększenie odstępu między elementami
+    }
+  }
+  

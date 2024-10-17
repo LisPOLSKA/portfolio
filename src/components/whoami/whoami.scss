@@ -1,0 +1,89 @@
+@import '../../style.scss';
+
+section.whoami {
+  padding: 50px 20px;
+  color: #333;
+
+  .top {
+    text-align: center;
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: aqua;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    article {
+      flex: 1;
+      background-color: #372547;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #ddd;
+      }
+    }
+
+    #iam {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      span:first-child {
+        color: #a61515; // Czerwony kolor dla "I am"
+      }
+
+      #who {
+        margin-left: 10px;
+        color: #fff; // Biały kolor dla zmieniającego się tekstu
+        font-weight: bold;
+        font-size: 1.8rem;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out; // Płynne przejście podczas zmiany tekstu
+      }
+    }
+  }
+
+  @include mobile {
+    .bottom {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include tablet {
+    .bottom {
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+}
