@@ -1,9 +1,9 @@
-import React from "react";
-import './footer.scss';  // Dodaj style dla stopki
+import React, { memo } from "react";
+import './footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faDiscord, faYoutube, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-function Footer() {
+const Footer = memo(() => {
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -25,6 +25,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+});
 
 export default Footer;

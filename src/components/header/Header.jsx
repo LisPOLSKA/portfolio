@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import "./header.scss";
 import { NavLink, Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -6,11 +6,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import EmailIcon from '@mui/icons-material/Email';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 
-function Header() {
+const Header = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prev => !prev);
   };
 
   return (
@@ -25,7 +25,6 @@ function Header() {
         <MenuIcon style={{ fontSize: '2.5rem', color: 'whitesmoke' }} />
       </div>
 
-      {/* Menu nawigacyjne */}
       <nav className={isMenuOpen ? "open" : ""}>
         <NavLink 
           to="/" 
@@ -54,6 +53,6 @@ function Header() {
       </nav>
     </header>
   );
-}
+});
 
 export default Header;

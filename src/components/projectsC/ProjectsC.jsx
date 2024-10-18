@@ -1,8 +1,15 @@
 import React from "react";
 import "./projectC.scss"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 
 function ProjectsC() {
-
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+  
   const projects = [
     {
       id: 1,
@@ -76,7 +83,7 @@ function ProjectsC() {
       <h1>My projects</h1>
       <div className="container__projects">
         {projects.map((project) => (
-          <article key={project.id}>
+          <article key={project.id} data-aos="fade-up">
             <h2>{project.name}</h2>
             <img src={project.image} alt={project.name} referrerPolicy="no-referrer"/>
             <p>{project.description}{project.additionalLink ? <a href={project.additionalLink} target="_blank" rel="noreferrer" className="link">{project.additionalLink}</a> : ""}</p>

@@ -87,3 +87,27 @@ section.whoami {
     }
   }
 }
+.text-animate::before {
+  content: "IT"; // Domyślna wartość
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  animation: textAnimation 8s infinite steps(1);
+}
+
+@keyframes textAnimation {
+  0%, 25% {
+    content: "IT";
+  }
+  26%, 50% {
+    content: "Programmer";
+  }
+  51%, 75% {
+    content: "Developer";
+  }
+  76%, 100% {
+    content: "Tech Enthusiast";
+  }
+}
+
+

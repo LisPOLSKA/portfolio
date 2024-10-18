@@ -1,6 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./contactC.scss";
 import emailjs from "@emailjs/browser";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 // Używanie zmiennych środowiskowych
 const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
@@ -10,6 +13,11 @@ const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 function ContactC() {
   const [showPopup, setShowPopup] = useState(false); // Stan do kontrolowania popupu
   const form = useRef();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+  
 
   const send = async (e) => {
   e.preventDefault();
@@ -26,7 +34,7 @@ function ContactC() {
 };
 
   return (
-    <section className="contact__form">
+    <section className="contact__form" data-aos="fade-up">
       <div className="contactForm">
         <h1>Contact with me</h1>
         <form onSubmit={send} ref={form}>
